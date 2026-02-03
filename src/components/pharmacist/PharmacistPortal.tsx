@@ -8,8 +8,6 @@ import {
     Clock,
     Lock,
     Unlock,
-    ArrowRight,
-    ShieldCheck,
     Smartphone,
     ChevronRight
 } from 'lucide-react';

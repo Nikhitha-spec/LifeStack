@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
     ShieldAlert,
     Clock,
-    Lock,
     Unlock,
     AlertCircle,
     Activity,

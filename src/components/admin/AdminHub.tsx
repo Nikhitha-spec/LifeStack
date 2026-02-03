@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../../context/AppContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     UserPlus,
     Users,
     Settings,
     Plus,
     Search,
-    ArrowRight,
-    ShieldCheck,
-    Zap,
     LayoutGrid,
     ChevronRight,
     Filter
@@ -27,11 +24,17 @@ const AdminHub: React.FC = () => {
         const newPatient: Patient = {
             id: `P-${Math.floor(1000 + Math.random() * 9000)}`,
             name,
+            dob: '1990-01-01',
+            gender: 'UNSPECIFIED',
+            weight: '70kg',
+            height: '175cm',
             bloodGroup,
             allergies: [],
             chronicConditions: [],
             isPharmacyAccessAllowed: true,
             prescriptions: [],
+            primaryPhysician: 'Dr. Sarah Lee',
+            insuranceId: `INS-${Math.floor(100000 + Math.random() * 900000)}`,
             avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${name}`
         };
         addPatient(newPatient);

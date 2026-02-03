@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useTranslation } from '../../hooks/useTranslation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     Zap,
-    Droplet,
-    AlertCircle,
-    Fingerprint,
     Shield,
-    Activity,
     Info,
     Calendar,
     User,
