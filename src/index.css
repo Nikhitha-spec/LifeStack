@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Telugu:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-peacock-50: #f0f7f7;
+  --color-peacock-100: #e0efef;
+  --color-peacock-200: #b3d6d6;
+  --color-peacock-300: #80b2b2;
+  --color-peacock-400: #4d8f8f;
+  --color-peacock-500: #005f5f;
+  --color-peacock-600: #005656;
+  --color-peacock-700: #004747;
+  --color-peacock-800: #003838;
+  --color-peacock-900: #002a2a;
+
+  --color-clinical-50: #eff6ff;
+  --color-clinical-100: #dbeafe;
+  --color-clinical-200: #bfdbfe;
+  --color-clinical-300: #93c5fd;
+  --color-clinical-400: #60a5fa;
+  --color-clinical-500: #3b82f6;
+  --color-clinical-600: #2563eb;
+  --color-clinical-700: #1d4ed8;
+  --color-clinical-800: #1e40af;
+  --color-clinical-900: #1e3a8a;
+  --color-clinical-950: #0f172a;
+
+  --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-telugu: "Noto Sans Telugu", sans-serif;
+  --font-hindi: "Noto Sans Devanagari", sans-serif;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+
+  --shadow-premium: 0 20px 50px -12px rgba(0, 42, 42, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 95, 95, 0.2);
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-900 font-plus-jakarta antialiased selection:bg-peacock-100 selection:text-peacock-900 transition-all duration-300;
+  }
+
+  body.lang-telugu {
+    font-family: var(--font-telugu) !important;
+  }
+
+  body.lang-hindi {
+    font-family: var(--font-hindi) !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-peacock-900 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-premium hover:shadow-glow flex items-center justify-center gap-2 disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-slate-200 text-slate-900 font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:bg-slate-50 flex items-center justify-center gap-2;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-4xl shadow-premium border border-white/50 p-6 md:p-8 transition-all duration-500;
+  }
+
+  .glass-morph {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-premium;
+  }
+
+  .input-futuristic {
+    @apply w-full bg-slate-100/50 border border-slate-200/50 rounded-2xl py-4 px-6 focus:bg-white focus:ring-4 focus:ring-peacock-500/10 focus:border-peacock-500/50 outline-none transition-all font-semibold text-slate-900 placeholder:text-slate-400;
+  }
+
+  .status-badge {
+    @apply px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border;
+  }
+
+  .clinical-gradient {
+    @apply bg-gradient-to-br from-peacock-900 via-peacock-800 to-peacock-700;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
