@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import jsQR from 'jsqr';
 import { Camera, RefreshCw, X, Shield, Zap, Activity } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface QRScannerProps {
     onScan: (data: string) => void;
